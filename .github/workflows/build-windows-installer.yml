@@ -37,9 +37,8 @@ jobs:
         run: npm ci
 
       - name: Build Tauri Desktop Application for Windows 11
-        uses: tauri-apps/tauri-action@v0
+        uses: tauri-apps/tauri-action@v2
         with:
-          packageManager: npm
           args: ${{ matrix.args }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

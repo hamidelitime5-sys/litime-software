@@ -36,9 +36,14 @@ jobs:
       - name: Install frontend dependencies
         run: npm ci
 
+      - name: Configure Node Path for Windows
+        run: |
+          echo "$env:APPDATA\npm" | Out-File -FilePath $env:GITHUB_PATH -Encoding utf8 -Append
+          echo "$env:ProgramFiles\nodejs" | Out-File -FilePath $env:GITHUB_PATH -Encoding utf8 -Append
+
       - name: Build Tauri Desktop Application for Windows 11
         uses: tauri-apps/tauri-action@v0
         with:
-          args: "--runner npm"
+          args: ${{ matrix.args }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -1,0 +1,49 @@
+@import "tailwindcss";
+
+/* ============================================================
+   SKINS / THÈMES DE SCÈNE
+   Applique un thème global via l'attribut [data-theme] sur <html>,
+   en surchargeant les classes Tailwind déjà utilisées partout dans
+   l'app (bg-zinc-*, text-*, border-*) — pas besoin de modifier
+   chaque composant un par un.
+   ============================================================ */
+
+/* Thème 1 (par défaut) : "Scène Sombre" — déjà le style actuel de
+   l'app (fonds très noirs, accents orange/violet fluo pour lire
+   sans fatigue dans le noir complet en concert). Aucune surcharge
+   nécessaire, c'est la palette Tailwind zinc/orange déjà en place. */
+
+/* Thème 2 : "Jour / Répétition" — fonds clairs, sans reflets au soleil */
+[data-theme="jour"] {
+  color-scheme: light;
+}
+[data-theme="jour"] .bg-\[\#050505\],
+[data-theme="jour"] .bg-zinc-950 { background-color: #f4f4f5 !important; }
+[data-theme="jour"] .bg-zinc-900,
+[data-theme="jour"] .bg-zinc-900\/50,
+[data-theme="jour"] .bg-zinc-900\/90 { background-color: #ffffff !important; }
+[data-theme="jour"] .bg-zinc-800 { background-color: #e4e4e7 !important; }
+[data-theme="jour"] .border-zinc-800,
+[data-theme="jour"] .border-zinc-900 { border-color: #d4d4d8 !important; }
+[data-theme="jour"] .text-white { color: #18181b !important; }
+[data-theme="jour"] .text-zinc-300,
+[data-theme="jour"] .text-zinc-400 { color: #3f3f46 !important; }
+[data-theme="jour"] .text-zinc-500 { color: #71717a !important; }
+[data-theme="jour"] .hover\:bg-zinc-800:hover { background-color: #d4d4d8 !important; }
+[data-theme="jour"] .hover\:text-white:hover { color: #000000 !important; }
+
+/* Thème 3 : "Studio Néon" — variante stylisée cyan/magenta sur fond
+   très sombre bleuté, pour une ambiance studio distincte du mode scène. */
+[data-theme="neon"] .bg-\[\#050505\],
+[data-theme="neon"] .bg-zinc-950 { background-color: #05010f !important; }
+[data-theme="neon"] .bg-zinc-900,
+[data-theme="neon"] .bg-zinc-900\/50,
+[data-theme="neon"] .bg-zinc-900\/90 { background-color: #0f0a24 !important; }
+[data-theme="neon"] .bg-zinc-800 { background-color: #1a1140 !important; }
+[data-theme="neon"] .border-zinc-800,
+[data-theme="neon"] .border-zinc-900 { border-color: #3d2a7a !important; }
+[data-theme="neon"] .text-orange-500,
+[data-theme="neon"] .text-orange-400,
+[data-theme="neon"] .bg-orange-500 { color: #ff2ecb !important; }
+[data-theme="neon"] .bg-orange-500 { background-color: #00f0ff !important; color: #05010f !important; }
+[data-theme="neon"] .selection\:bg-orange-500::selection { background-color: #ff2ecb; }

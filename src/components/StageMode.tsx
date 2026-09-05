@@ -1188,7 +1188,7 @@ export const StageMode: React.FC<StageModeProps> = ({
                         return (
                           <span
                             key={pIdx}
-                            className={`font-sans transition-colors ${
+                            className={`font-mono whitespace-pre transition-colors ${
                               isActive
                                 ? `${currentTheme.textGlow} text-white font-bold text-[1.06em]`
                                 : isNext
